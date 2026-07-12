@@ -16,7 +16,6 @@ A professional, multi-page cybersecurity portfolio built with pure HTML5, CSS3, 
 ├── experience.html         # Professional experience timeline
 ├── certifications.html     # Certification badge grid
 ├── research.html           # Publications
-├── achievements.html       # Honors & achievements
 ├── contact.html            # Terminal-style contact
 ├── 404.html                # Custom error page
 ├── style.css               # Shared design system
@@ -27,7 +26,6 @@ A professional, multi-page cybersecurity portfolio built with pure HTML5, CSS3, 
     ├── trinityos.html      # TrinityOS deep-dive
     ├── pinaca.html         # PINACA deep-dive
     ├── meghnad.html        # Meghnad deep-dive
-    ├── nes.html            # NES cipher deep-dive
     ├── kalki.html          # Kalki framework deep-dive
     └── iskabon.html        # Iskabon capture engine deep-dive
 ```
