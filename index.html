@@ -8,11 +8,11 @@
   <meta name="keywords" content="Nilotpal Guha, cybersecurity engineer, offensive security, penetration testing, TrinityOS, Kalki, Iskabon, PINACA, Meghnad">
   <meta name="author" content="Nilotpal Guha">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nilotpalguha.dev/index.html">
+  <link rel="canonical" href="https://nilotpalguha.dev/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Nilotpal Guha | Offensive Security Engineer & Cybersecurity Researcher">
   <meta property="og:description" content="Nilotpal Guha is a cybersecurity engineer specializing in offensive security, pentesting automation, edge AI, and distributed systems.">
-  <meta property="og:url" content="https://nilotpalguha.dev/index.html">
+  <meta property="og:url" content="https://nilotpalguha.dev/">
   <meta property="og:image" content="https://nilotpalguha.dev/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nilotpal Guha | Offensive Security Engineer & Cybersecurity Researcher">
@@ -20,7 +20,6 @@
   <meta name="twitter:image" content="https://nilotpalguha.dev/og-image.png">
   <meta name="theme-color" content="#000000">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='8' y='24' font-family='monospace' font-size='24' fill='%2300ff41'%3E_%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,6 +55,1493 @@
     "email": "guha.nilotpal04@gmail.com"
   }
   </script>
+<style>
+/* ============================================================
+   NILOTPAL GUHA — PERSONAL PORTFOLIO
+   Mr. Robot Theme | Design System & Shared Styles
+   ============================================================ */
+
+/* --- CUSTOM PROPERTIES --- */
+:root {
+  --black: #000000;
+  --near-black: #0a0a0a;
+  --dark-surface: #111111;
+  --dark-border: #1a1a1a;
+  --green: #00ff41;
+  --green-dim: #00cc33;
+  --green-glow: rgba(0, 255, 65, 0.15);
+  --green-glow-strong: rgba(0, 255, 65, 0.35);
+  --red: #ff0000;
+  --red-dim: #cc0000;
+  --red-glow: rgba(255, 0, 0, 0.15);
+  --cyan: #0d7377;
+  --cyan-light: #0fa5a9;
+  --text: #c0c0c0;
+  --text-dim: #888888;
+  --text-bright: #e0e0e0;
+  --white: #ffffff;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  --transition-fast: 0.15s ease;
+  --transition-med: 0.3s ease;
+  --transition-slow: 0.6s ease;
+  --border-radius: 4px;
+  --max-width: 1200px;
+  --nav-height: 70px;
+}
+
+/* --- RESET & BASE --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-mono);
+  background: var(--black);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --- CRT SCANLINE OVERLAY --- */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* --- VHS NOISE OVERLAY --- */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9997;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* --- SCREEN FLICKER --- */
+@keyframes flicker {
+  0%, 97%, 100% { opacity: 1; }
+  98% { opacity: 0.85; }
+  99% { opacity: 0.95; }
+}
+
+.flicker {
+  animation: flicker 8s infinite;
+}
+
+/* --- SELECTION --- */
+::selection {
+  background: var(--green);
+  color: var(--black);
+}
+
+::-moz-selection {
+  background: var(--green);
+  color: var(--black);
+}
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--near-black); }
+::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--green); }
+
+/* --- LINKS --- */
+a {
+  color: var(--green);
+  text-decoration: none;
+  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+a:hover {
+  color: var(--green);
+  text-shadow: 0 0 8px var(--green-glow-strong);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+/* --- HEADINGS --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono);
+  color: var(--text-bright);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
+
+/* --- LAYOUT --- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page-content {
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 4rem;
+  min-height: calc(100vh - var(--nav-height));
+}
+
+/* --- SPA SECTIONS --- */
+.page-section {
+  display: none;
+}
+.page-section.active {
+  display: block;
+}
+
+/* ============================================================
+   BOOT SEQUENCE
+   ============================================================ */
+.boot-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--black);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  color: var(--green);
+  font-size: 0.9rem;
+  padding: 2rem;
+  transition: opacity 0.5s ease;
+}
+
+.boot-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.boot-overlay .boot-line {
+  opacity: 0;
+  transform: translateY(5px);
+  white-space: pre;
+}
+
+.boot-overlay .boot-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* ============================================================
+   NAVIGATION — 3D Rolodex Menu
+   ============================================================ */
+.nav-main {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--dark-border);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+}
+
+.nav-main .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  perspective: 400px;
+}
+
+.nav-logo a {
+  color: var(--green);
+  display: inline-block;
+  transition: transform var(--transition-med);
+  transform-style: preserve-3d;
+}
+
+.nav-logo a:hover {
+  transform: rotateY(15deg) rotateX(-5deg);
+  text-shadow: 0 0 20px var(--green-glow-strong);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  perspective: 800px;
+}
+
+.nav-links li {
+  transform-style: preserve-3d;
+  transition: transform var(--transition-med);
+}
+
+.nav-links li:hover {
+  transform: translateZ(10px) rotateY(-5deg);
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--green);
+  border-color: var(--green-dim);
+  background: var(--green-glow);
+  text-shadow: 0 0 10px var(--green-glow);
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--green);
+  transition: all var(--transition-med);
+}
+
+.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.breadcrumb {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--dark-border);
+  font-family: var(--font-mono);
+}
+
+.breadcrumb::before {
+  content: 'root@nilotpal:~';
+  color: var(--cyan);
+  margin-right: 0.25rem;
+}
+
+.breadcrumb .separator {
+  color: var(--text-dim);
+  margin: 0 0.25rem;
+}
+
+.breadcrumb a {
+  color: var(--text-dim);
+}
+
+.breadcrumb a:hover {
+  color: var(--green);
+}
+
+.breadcrumb .current {
+  color: var(--green);
+}
+
+/* ============================================================
+   HERO SECTION (index.html)
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-tagline {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  color: var(--green);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--text);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-3d {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+#hero-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  background: transparent;
+  color: var(--green);
+}
+
+.btn:hover {
+  background: var(--green);
+  color: var(--black);
+  box-shadow: 0 0 20px var(--green-glow), inset 0 0 20px rgba(0, 255, 65, 0.1);
+  text-shadow: none;
+}
+
+.btn-red {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.btn-red:hover {
+  background: var(--red);
+  color: var(--black);
+  box-shadow: 0 0 20px var(--red-glow);
+}
+
+/* ============================================================
+   MATRIX RAIN CANVAS
+   ============================================================ */
+.matrix-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.matrix-bg-light {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* ============================================================
+   CARDS / PANELS — 3D Flip Effect
+   ============================================================ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+  perspective: 1000px;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-med);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-5px) rotateX(2deg);
+  box-shadow: 0 10px 40px rgba(0, 255, 65, 0.08), 0 0 0 1px var(--green-dim);
+}
+
+.card-title {
+  color: var(--green);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-title::before {
+  content: '$ ';
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.card-text {
+  color: var(--text);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--green);
+  cursor: pointer;
+}
+
+.card-link::after {
+  content: ' →';
+}
+
+/* Glitch border on hover */
+.card-glitch {
+  position: relative;
+}
+
+.card-glitch::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.card-glitch:hover::after {
+  animation: glitch-border 0.3s ease;
+}
+
+@keyframes glitch-border {
+  0% { opacity: 0; transform: translate(0); }
+  20% { opacity: 1; transform: translate(-2px, 1px); border-color: var(--red); }
+  40% { opacity: 1; transform: translate(1px, -1px); border-color: var(--green); }
+  60% { opacity: 0.5; transform: translate(-1px, 2px); border-color: var(--cyan); }
+  80% { opacity: 1; transform: translate(2px, -1px); border-color: var(--green); }
+  100% { opacity: 0; transform: translate(0); }
+}
+
+/* ============================================================
+   SKILL CHIPS — 3D Float
+   ============================================================ */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.skill-chip {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+  color: var(--green);
+  transform-style: preserve-3d;
+  animation: float-chip 4s ease-in-out infinite;
+  cursor: default;
+}
+
+.skill-chip:nth-child(odd) { animation-delay: -1s; }
+.skill-chip:nth-child(3n) { animation-delay: -2s; }
+.skill-chip:nth-child(5n) { animation-delay: -0.5s; }
+
+.skill-chip:hover {
+  border-color: var(--green);
+  box-shadow: 0 0 15px var(--green-glow);
+}
+
+@keyframes float-chip {
+  0%, 100% { transform: translateZ(0) rotateX(0deg) rotateY(0deg); }
+  25% { transform: translateZ(8px) rotateX(3deg) rotateY(-2deg); }
+  50% { transform: translateZ(4px) rotateX(-2deg) rotateY(3deg); }
+  75% { transform: translateZ(10px) rotateX(1deg) rotateY(-1deg); }
+}
+
+/* ============================================================
+   TERMINAL BLOCK
+   ============================================================ */
+.terminal {
+  background: var(--near-black);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  position: relative;
+}
+
+.terminal-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.terminal-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--text-dim);
+}
+
+.terminal-dot:nth-child(1) { background: var(--red); }
+.terminal-dot:nth-child(2) { background: #ffcc00; }
+.terminal-dot:nth-child(3) { background: var(--green); }
+
+.terminal .prompt {
+  color: var(--green);
+}
+
+.terminal .output {
+  color: var(--text);
+}
+
+.terminal .error {
+  color: var(--red);
+}
+
+/* ============================================================
+   DECRYPT TEXT EFFECT
+   ============================================================ */
+.decrypt-text {
+  position: relative;
+  display: inline-block;
+}
+
+.decrypt-text .real-text {
+  visibility: hidden;
+}
+
+.decrypt-text .scramble-text {
+  position: absolute;
+  top: 0; left: 0;
+  color: var(--green);
+}
+
+.decrypt-text.decrypted .real-text {
+  visibility: visible;
+}
+
+.decrypt-text.decrypted .scramble-text {
+  display: none;
+}
+
+/* ============================================================
+   REDACTED / CENSORED TEXT
+   ============================================================ */
+.redacted {
+  position: relative;
+  cursor: pointer;
+}
+
+.redacted::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--text-bright);
+  transition: opacity var(--transition-med);
+}
+
+.redacted:hover::after {
+  opacity: 0;
+}
+
+/* ============================================================
+   TIMELINE (Experience)
+   ============================================================ */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--green), var(--dark-border));
+}
+
+.timeline-entry {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: -2.35rem;
+  top: 0.5rem;
+  width: 12px; height: 12px;
+  background: var(--green);
+  border-radius: 50%;
+  border: 2px solid var(--black);
+  box-shadow: 0 0 10px var(--green-glow);
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  color: var(--cyan);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  color: var(--text-bright);
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-org {
+  color: var(--green);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.timeline-desc ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.timeline-desc li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-desc li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+/* ============================================================
+   CERTIFICATION BADGES
+   ============================================================ */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.badge {
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all var(--transition-med);
+  transform-style: preserve-3d;
+}
+
+.badge:hover {
+  border-color: var(--green);
+  transform: translateY(-3px) rotateX(3deg);
+  box-shadow: 0 8px 30px rgba(0, 255, 65, 0.06);
+}
+
+.badge-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.badge-name {
+  color: var(--green);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.badge-issuer {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+
+.badge-date {
+  color: var(--cyan);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   PROJECT DEEP-DIVE PAGE
+   ============================================================ */
+.project-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.project-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-dim);
+}
+
+.project-meta-item strong {
+  color: var(--green);
+}
+
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--dark-border);
+}
+
+.project-nav a {
+  font-size: 0.85rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.project-nav a:hover {
+  border-color: var(--green);
+  background: var(--green-glow);
+}
+
+/* ============================================================
+   SECTION ENTRANCE — Scroll Animation Classes
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) translateZ(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+}
+
+.reveal-flip {
+  opacity: 0;
+  transform: rotateY(15deg) translateZ(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-flip.visible {
+  opacity: 1;
+  transform: rotateY(0) translateZ(0);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--near-black);
+  border-top: 1px solid var(--dark-border);
+  padding: 3rem 0 2rem;
+  margin-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  color: var(--green);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-section h3::before {
+  content: '$ ';
+  color: var(--text-dim);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--green);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--dark-border);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.footer-bottom .cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ============================================================
+   GLITCH TEXT EFFECT
+   ============================================================ */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch:hover {
+  animation: glitch-text 0.3s ease;
+}
+
+@keyframes glitch-text {
+  0% { transform: translate(0); text-shadow: none; }
+  10% { transform: translate(-2px, 1px); text-shadow: 2px 0 var(--red), -2px 0 var(--cyan); }
+  20% { transform: translate(1px, -1px); text-shadow: -1px 0 var(--red), 1px 0 var(--cyan); }
+  30% { transform: translate(-1px, 2px); text-shadow: 1px 0 var(--green), -1px 0 var(--red); }
+  40% { transform: translate(2px, -1px); text-shadow: -2px 0 var(--cyan), 2px 0 var(--green); }
+  50% { transform: translate(0); text-shadow: none; }
+  100% { transform: translate(0); text-shadow: none; }
+}
+
+/* ============================================================
+   TERMINAL CURSOR BLINK
+   ============================================================ */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.1em;
+  background: var(--green);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+/* ============================================================
+   CONTACT PAGE TERMINAL
+   ============================================================ */
+.contact-terminal {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-terminal .line {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.contact-terminal .line-label {
+  color: var(--text-dim);
+}
+
+.contact-terminal .line-value {
+  color: var(--green);
+}
+
+.contact-terminal .line-value a {
+  color: var(--green);
+}
+
+/* ============================================================
+   404 PAGE
+   ============================================================ */
+.error-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.error-code {
+  font-size: clamp(5rem, 15vw, 12rem);
+  color: var(--red);
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+  animation: glitch-text 2s ease infinite;
+}
+
+/* ============================================================
+   NOSCRIPT FALLBACK
+   ============================================================ */
+noscript .noscript-content {
+  background: var(--near-black);
+  border: 1px solid var(--dark-border);
+  padding: 2rem;
+  margin: 2rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   FSOFSOCIETY MASK (Decorative)
+   ============================================================ */
+.fsociety-deco {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  opacity: 0.05;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fsociety-deco svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   RESEARCH / PUBLICATIONS
+   ============================================================ */
+.pub-entry {
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--green);
+}
+
+.pub-entry h3 {
+  color: var(--text-bright);
+  margin-bottom: 0.5rem;
+}
+
+.pub-authors {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.pub-venue {
+  color: var(--cyan);
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.pub-status {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--border-radius);
+}
+
+.pub-status.submitted {
+  background: rgba(255, 0, 0, 0.15);
+  color: var(--red);
+  border: 1px solid var(--red-dim);
+}
+
+.pub-status.review {
+  background: rgba(13, 115, 119, 0.15);
+  color: var(--cyan-light);
+  border: 1px solid var(--cyan);
+}
+
+/* ============================================================
+   ACHIEVEMENTS
+   ============================================================ */
+.achievement-card {
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: linear-gradient(to bottom, var(--green), var(--cyan));
+}
+
+.achievement-card h3 {
+  color: var(--text-bright);
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+
+.achievement-card p {
+  color: var(--text);
+  font-size: 0.85rem;
+  padding-left: 1rem;
+}
+
+.achievement-date {
+  color: var(--cyan);
+  font-size: 0.75rem;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   EXPLORE FURTHER SECTION (index.html)
+   ============================================================ */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.explore-link {
+  display: block;
+  padding: 1.25rem;
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  color: var(--text);
+  font-size: 0.85rem;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.explore-link:hover {
+  border-color: var(--green);
+  color: var(--green);
+  transform: translateX(5px);
+  box-shadow: -5px 0 0 var(--green);
+}
+
+.explore-link::before {
+  content: '> ';
+  color: var(--green);
+}
+
+/* ============================================================
+   ABOUT PAGE — SKILL CATEGORY
+   ============================================================ */
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+.skill-category h3 {
+  color: var(--cyan-light);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skill-category h3::before {
+  content: '## ';
+  color: var(--text-dim);
+}
+
+/* ============================================================
+   SECTION TITLES
+   ============================================================ */
+.section-title {
+  color: var(--text-bright);
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::before {
+  content: '# ';
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.section-subtitle {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* ============================================================
+   PROJECT DETAIL SECTIONS
+   ============================================================ */
+.project-section {
+  margin-bottom: 3rem;
+}
+
+.project-section h2 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.tech-list li {
+  padding: 0.3rem 0.8rem;
+  background: rgba(0, 255, 65, 0.08);
+  border: 1px solid rgba(0, 255, 65, 0.2);
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  color: var(--green);
+}
+
+/* ============================================================
+   PROJECT PAGE SPECIFIC
+   ============================================================ */
+.project-page .project-tagline {
+  color: var(--text);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.project-page .status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--border-radius);
+}
+
+.project-page .status-active {
+  background: rgba(0, 255, 65, 0.15);
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+}
+
+.project-page .status-alpha {
+  background: rgba(255, 0, 0, 0.15);
+  color: var(--red);
+  border: 1px solid var(--red-dim);
+}
+
+.project-page .status-beta {
+  background: rgba(13, 115, 119, 0.15);
+  color: var(--cyan-light);
+  border: 1px solid var(--cyan);
+}
+
+.project-page .status-research {
+  background: rgba(255, 204, 0, 0.15);
+  color: #ffcc00;
+  border: 1px solid #cc9900;
+}
+
+.project-page .status-rc {
+  background: rgba(0, 255, 65, 0.15);
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+}
+
+.project-page .tech-label {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+
+.project-page section {
+  margin-bottom: 3rem;
+}
+
+.project-page section h2 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.project-page .feature-list {
+  list-style: none;
+}
+
+.project-page .feature-list li {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--dark-border);
+}
+
+.project-page .feature-list li strong {
+  color: var(--green);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.project-page .feature-list li p {
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.project-page .tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-page .tech-tag {
+  padding: 0.3rem 0.8rem;
+  background: rgba(0, 255, 65, 0.08);
+  border: 1px solid rgba(0, 255, 65, 0.2);
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  color: var(--green);
+}
+
+.project-page .link-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-page .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--dark-border);
+  border-radius: var(--border-radius);
+  color: var(--text);
+  font-size: 0.85rem;
+  transition: all var(--transition-fast);
+}
+
+.project-page .project-link:hover {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green-glow);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  :root { --nav-height: 60px; }
+
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.97);
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform var(--transition-med), opacity var(--transition-med);
+    pointer-events: none;
+    border-bottom: 1px solid var(--dark-border);
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--dark-border);
+    border-radius: 0;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-3d {
+    width: 250px;
+    height: 250px;
+  }
+
+  .badge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 1rem; }
+  .hero-title { font-size: 2rem; }
+  h1 { font-size: 1.8rem; }
+}
+
+/* ============================================================
+   PREFERS-REDUCED-MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .boot-overlay { display: none; }
+  .skill-chip { animation: none; }
+  .reveal, .reveal-flip { opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  body::before, body::after { display: none; }
+  .nav-main, .footer, .boot-overlay, .matrix-bg, .matrix-bg-light { display: none; }
+  .page-content { padding-top: 0; }
+  a { color: #000; }
+  a::after { content: ' (' attr(href) ')'; font-size: 0.8em; }
+}
+</style>
 </head>
 <body class="flicker">
   <noscript>
@@ -65,13 +1551,13 @@
       <nav>
         <p>Site Navigation:</p>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="certifications.html">Certifications</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -91,15 +1577,15 @@
 
   <nav class="nav-main" role="navigation" aria-label="Main navigation">
     <div class="container">
-      <div class="nav-logo"><a href="index.html" class="glitch">NG</a></div>
+      <div class="nav-logo"><a href="#home" class="glitch" data-nav="home">NG</a></div>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="certifications.html">Certs</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home" class="active" data-nav="home">Home</a></li>
+        <li><a href="#about" data-nav="about">About</a></li>
+        <li><a href="#projects" data-nav="projects">Projects</a></li>
+        <li><a href="#experience" data-nav="experience">Experience</a></li>
+        <li><a href="#certifications" data-nav="certifications">Certs</a></li>
+        <li><a href="#research" data-nav="research">Research</a></li>
+        <li><a href="#contact" data-nav="contact">Contact</a></li>
       </ul>
       <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -107,97 +1593,1177 @@
     </div>
   </nav>
 
-  <main>
-    <section class="hero">
-      <div class="hero-3d">
-        <canvas id="hero-canvas" aria-hidden="true"></canvas>
-      </div>
-      <div class="hero-content container">
-        <p class="hero-tagline decrypt-text" data-text="> initializing identity protocol...">
-          <span class="real-text">> initializing identity protocol...</span>
-        </p>
-        <h1 class="hero-title">
-          <span class="glitch" data-text="Nilotpal Guha">Nilotpal Guha</span>
-        </h1>
-        <p class="hero-subtitle">
-          Offensive Security Engineer &amp; Cybersecurity Researcher — building tools that break systems to make them stronger.
-        </p>
-        <div class="hero-cta">
-          <a href="projects.html" class="btn">View Projects</a>
-          <a href="contact.html" class="btn btn-red">Establish Contact</a>
+  <!-- ============================================================
+       HOME PAGE
+       ============================================================ -->
+  <section id="page-home" class="page-section active">
+    <main>
+      <section class="hero">
+        <div class="hero-3d">
+          <canvas id="hero-canvas" aria-hidden="true"></canvas>
         </div>
-      </div>
-    </section>
-
-    <section class="container" style="padding-top: 4rem;">
-      <h2 class="section-title reveal">Current Operations</h2>
-      <p class="section-subtitle reveal">What I'm working on right now</p>
-      <div class="terminal reveal">
-        <div class="terminal-header">
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-        </div>
-        <div class="line"><span class="prompt">$</span> <span class="output">cat /var/log/current_ops.log</span></div>
-        <div class="line"><span class="output">[2026-07] TrinityOS v2.1 — Packaging new pentest module set</span></div>
-        <div class="line"><span class="output">[2026-05] Kalki — AD attack chain automation in alpha testing</span></div>
-        <div class="line"><span class="output">[2026-04] Iskabon — DPDK zero-copy capture hitting 25Gbps line rate</span></div>
-        <div class="line"><span class="prompt">$</span> <span class="cursor"></span></div>
-      </div>
-    </section>
-
-    <section class="container" style="padding-top: 3rem;">
-      <h2 class="section-title reveal">Explore Further</h2>
-      <p class="section-subtitle reveal">Every page is within reach</p>
-      <div class="explore-grid">
-        <a href="about.html" class="explore-link reveal">About — Bio, skills &amp; education</a>
-        <a href="projects.html" class="explore-link reveal">Classified Ops — All projects</a>
-        <a href="experience.html" class="explore-link reveal">Experience — Professional timeline</a>
-        <a href="certifications.html" class="explore-link reveal">Certifications — Badge grid</a>
-        <a href="research.html" class="explore-link reveal">Research — Publications &amp; papers</a>
-        <a href="contact.html" class="explore-link reveal">Contact — Establish secure channel</a>
-      </div>
-    </section>
-
-    <section class="container" style="padding-top: 3rem; padding-bottom: 2rem;">
-      <h2 class="section-title reveal">Featured Projects</h2>
-      <p class="section-subtitle reveal">Flagship builds from the lab</p>
-      <div class="card-grid">
-        <article class="card card-glitch reveal-flip">
-          <h3 class="card-title">TrinityOS</h3>
-          <p class="card-text">Custom Debian-based offensive security operating system with curated pentest toolset and reproducible bootable ISO.</p>
-          <div class="card-tech">
-            <span class="skill-chip">Debian</span>
-            <span class="skill-chip">Bash</span>
-            <span class="skill-chip">Linux Kernel</span>
+        <div class="hero-content container">
+          <p class="hero-tagline decrypt-text" data-text="> initializing identity protocol...">
+            <span class="real-text">> initializing identity protocol...</span>
+          </p>
+          <h1 class="hero-title">
+            <span class="glitch" data-text="Nilotpal Guha">Nilotpal Guha</span>
+          </h1>
+          <p class="hero-subtitle">
+            Offensive Security Engineer &amp; Cybersecurity Researcher — building tools that break systems to make them stronger.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn" data-nav="projects">View Projects</a>
+            <a href="#contact" class="btn btn-red" data-nav="contact">Establish Contact</a>
           </div>
-          <a href="projects/trinityos.html" class="card-link">Explore TrinityOS</a>
+        </div>
+      </section>
+
+      <section class="container" style="padding-top: 4rem;">
+        <h2 class="section-title reveal">Current Operations</h2>
+        <p class="section-subtitle reveal">What I'm working on right now</p>
+        <div class="terminal reveal">
+          <div class="terminal-header">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+          </div>
+          <div class="line"><span class="prompt">$</span> <span class="output">cat /var/log/current_ops.log</span></div>
+          <div class="line"><span class="output">[2026-07] TrinityOS v2.1 — Packaging new pentest module set</span></div>
+          <div class="line"><span class="output">[2026-05] Kalki — AD attack chain automation in alpha testing</span></div>
+          <div class="line"><span class="output">[2026-04] Iskabon — DPDK zero-copy capture hitting 25Gbps line rate</span></div>
+          <div class="line"><span class="prompt">$</span> <span class="cursor"></span></div>
+        </div>
+      </section>
+
+      <section class="container" style="padding-top: 3rem;">
+        <h2 class="section-title reveal">Explore Further</h2>
+        <p class="section-subtitle reveal">Every page is within reach</p>
+        <div class="explore-grid">
+          <a href="#about" class="explore-link reveal" data-nav="about">About — Bio, skills &amp; education</a>
+          <a href="#projects" class="explore-link reveal" data-nav="projects">Classified Ops — All projects</a>
+          <a href="#experience" class="explore-link reveal" data-nav="experience">Experience — Professional timeline</a>
+          <a href="#certifications" class="explore-link reveal" data-nav="certifications">Certifications — Badge grid</a>
+          <a href="#research" class="explore-link reveal" data-nav="research">Research — Publications &amp; papers</a>
+          <a href="#contact" class="explore-link reveal" data-nav="contact">Contact — Establish secure channel</a>
+        </div>
+      </section>
+
+      <section class="container" style="padding-top: 3rem; padding-bottom: 2rem;">
+        <h2 class="section-title reveal">Featured Projects</h2>
+        <p class="section-subtitle reveal">Flagship builds from the lab</p>
+        <div class="card-grid">
+          <article class="card card-glitch reveal-flip">
+            <h3 class="card-title">TrinityOS</h3>
+            <p class="card-text">Custom Debian-based offensive security operating system with curated pentest toolset and reproducible bootable ISO.</p>
+            <div class="card-tech">
+              <span class="skill-chip">Debian</span>
+              <span class="skill-chip">Bash</span>
+              <span class="skill-chip">Linux Kernel</span>
+            </div>
+            <a href="#project-trinityos" class="card-link" data-nav="project-trinityos">Explore TrinityOS</a>
+          </article>
+          <article class="card card-glitch reveal-flip">
+            <h3 class="card-title">Kalki</h3>
+            <p class="card-text">Autonomous penetration testing framework chaining recon, exploitation, and privilege escalation into a single pipeline.</p>
+            <div class="card-tech">
+              <span class="skill-chip">Python3</span>
+              <span class="skill-chip">Rust</span>
+              <span class="skill-chip">Impacket</span>
+            </div>
+            <a href="#project-kalki" class="card-link" data-nav="project-kalki">Explore Kalki</a>
+          </article>
+          <article class="card card-glitch reveal-flip">
+            <h3 class="card-title">Iskabon</h3>
+            <p class="card-text">High-performance packet capture engine using DPDK zero-copy architecture for 10Gbps+ network speeds.</p>
+            <div class="card-tech">
+              <span class="skill-chip">C</span>
+              <span class="skill-chip">DPDK</span>
+              <span class="skill-chip">BPF</span>
+            </div>
+            <a href="#project-iskabon" class="card-link" data-nav="project-iskabon">Explore Iskabon</a>
+          </article>
+        </div>
+        <p style="text-align: center; margin-top: 2rem;"><a href="#projects" class="btn" data-nav="projects">View All Projects →</a></p>
+      </section>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       ABOUT PAGE
+       ============================================================ -->
+  <section id="page-about" class="page-section">
+    <main>
+      <section class="section-hero" style="padding-top: 8rem; padding-bottom: 2rem;">
+        <div class="container">
+          <div class="terminal reveal" style="margin-bottom: 2rem;">
+            <div class="terminal-header">
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+            </div>
+            <div class="line"><span class="prompt">root@nilotpal:</span><span class="output">~/about#</span></div>
+          </div>
+          <h1 class="hero-title reveal">
+            <span class="glitch" data-text="About Nilotpal Guha">About Nilotpal Guha</span>
+          </h1>
+          <p class="hero-subtitle reveal">Cybersecurity engineer from Kolkata — building offensive tools, breaking protocols, and hardening systems.</p>
+        </div>
+      </section>
+
+      <section class="container" style="padding-top: 3rem;">
+        <article>
+          <h2 class="section-title reveal">Education</h2>
+          <div class="terminal reveal">
+            <div class="terminal-header">
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+            </div>
+            <div class="line"><span class="prompt">$</span> <span class="output">cat /etc/education.conf</span></div>
+            <div class="line"><span class="output"><strong>Degree:</strong> B.Tech in Information Technology</strong></span></div>
+            <div class="line"><span class="output"><strong>Institution:</strong> RCC Institute of Information Technology, Kolkata</span></div>
+            <div class="line"><span class="output"><strong>Duration:</strong> 2024 — 2028</span></div>
+            <div class="line"><span class="prompt">$</span> <span class="output">cat /etc/coursework.conf</span></div>
+            <div class="line"><span class="output">Operating Systems | Computer Networks | Cryptography | Database Management Systems</span></div>
+            <div class="line"><span class="output">Data Structures &amp; Algorithms | Machine Learning | Computer Security</span></div>
+            <div class="line"><span class="prompt">$</span> <span class="cursor"></span></div>
+          </div>
         </article>
-        <article class="card card-glitch reveal-flip">
-          <h3 class="card-title">Kalki</h3>
-          <p class="card-text">Autonomous penetration testing framework chaining recon, exploitation, and privilege escalation into a single pipeline.</p>
-          <div class="card-tech">
+      </section>
+
+      <section class="container" style="padding-top: 3rem;">
+        <article>
+          <h2 class="section-title reveal">Technical Skills</h2>
+          <p class="section-subtitle reveal">Tools, languages, and domains — organized by operational category</p>
+
+          <h3 class="reveal" style="color: #00ff41; margin-top: 2rem; margin-bottom: 1rem; font-family: monospace; font-size: 1.1rem;">// Offensive Security</h3>
+          <div class="skills-grid reveal">
+            <span class="skill-chip">Penetration Testing (Web, Network, Active Directory)</span>
+            <span class="skill-chip">Vulnerability Assessment &amp; Exploitation</span>
+            <span class="skill-chip">Metasploit</span>
+            <span class="skill-chip">Burp Suite</span>
+            <span class="skill-chip">Nmap</span>
+            <span class="skill-chip">BloodHound</span>
+            <span class="skill-chip">Custom Exploit Development</span>
+            <span class="skill-chip">Red Team Operations</span>
+          </div>
+
+          <h3 class="reveal" style="color: #00ff41; margin-top: 2rem; margin-bottom: 1rem; font-family: monospace; font-size: 1.1rem;">// Programming Languages</h3>
+          <div class="skills-grid reveal">
             <span class="skill-chip">Python3</span>
-            <span class="skill-chip">Rust</span>
-            <span class="skill-chip">Impacket</span>
-          </div>
-          <a href="projects/kalki.html" class="card-link">Explore Kalki</a>
-        </article>
-        <article class="card card-glitch reveal-flip">
-          <h3 class="card-title">Iskabon</h3>
-          <p class="card-text">High-performance packet capture engine using DPDK zero-copy architecture for 10Gbps+ network speeds.</p>
-          <div class="card-tech">
             <span class="skill-chip">C</span>
-            <span class="skill-chip">DPDK</span>
-            <span class="skill-chip">BPF</span>
+            <span class="skill-chip">C++</span>
+            <span class="skill-chip">Rust</span>
+            <span class="skill-chip">Bash</span>
+            <span class="skill-chip">JavaScript</span>
+            <span class="skill-chip">SQL</span>
+            <span class="skill-chip">HTML/CSS</span>
+            <span class="skill-chip">LaTeX</span>
           </div>
-          <a href="projects/iskabon.html" class="card-link">Explore Iskabon</a>
+
+          <h3 class="reveal" style="color: #00ff41; margin-top: 2rem; margin-bottom: 1rem; font-family: monospace; font-size: 1.1rem;">// Systems &amp; Infrastructure</h3>
+          <div class="skills-grid reveal">
+            <span class="skill-chip">Linux Administration (Debian, Arch, Kali)</span>
+            <span class="skill-chip">Windows Server &amp; Active Directory</span>
+            <span class="skill-chip">Docker</span>
+            <span class="skill-chip">Kubernetes</span>
+            <span class="skill-chip">VMware</span>
+            <span class="skill-chip">TCP/IP</span>
+            <span class="skill-chip">DNS</span>
+            <span class="skill-chip">HTTP/S</span>
+            <span class="skill-chip">VPN</span>
+          </div>
+
+          <h3 class="reveal" style="color: #00ff41; margin-top: 2rem; margin-bottom: 1rem; font-family: monospace; font-size: 1.1rem;">// Cryptography &amp; AI</h3>
+          <div class="skills-grid reveal">
+            <span class="skill-chip">Applied Cryptography</span>
+            <span class="skill-chip">Lightweight Block Cipher Design</span>
+            <span class="skill-chip">Machine Learning (Scikit-learn, TensorFlow)</span>
+            <span class="skill-chip">Edge AI &amp; TinyML</span>
+          </div>
+
+          <h3 class="reveal" style="color: #00ff41; margin-top: 2rem; margin-bottom: 1rem; font-family: monospace; font-size: 1.1rem;">// Tools &amp; Frameworks</h3>
+          <div class="skills-grid reveal">
+            <span class="skill-chip">Git</span>
+            <span class="skill-chip">GitHub Actions</span>
+            <span class="skill-chip">Wireshark</span>
+            <span class="skill-chip">Elasticsearch</span>
+            <span class="skill-chip">Kibana</span>
+            <span class="skill-chip">Impacket</span>
+            <span class="skill-chip">Scapy</span>
+            <span class="skill-chip">BloodHound</span>
+            <span class="skill-chip">Shodan</span>
+            <span class="skill-chip">Censys</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="container" style="padding-top: 3rem;">
+        <article>
+          <h2 class="section-title reveal">Where These Skills Are Applied</h2>
+          <p class="section-subtitle reveal">Hands-on work that proves the skillset</p>
+          <div class="card-grid">
+            <article class="card card-glitch reveal-flip">
+              <h3 class="card-title">Offensive Security &amp; Red Teaming</h3>
+              <p class="card-text">Automated AD attack chains with <a href="#project-kalki" data-nav="project-kalki">Kalki</a>, built a custom pentest OS with <a href="#project-trinityos" data-nav="project-trinityos">TrinityOS</a>.</p>
+              <div class="card-tech">
+                <span class="skill-chip">Python3</span>
+                <span class="skill-chip">Rust</span>
+                <span class="skill-chip">Impacket</span>
+                <span class="skill-chip">BloodHound</span>
+              </div>
+            </article>
+
+            <article class="card card-glitch reveal-flip">
+              <h3 class="card-title">High-Performance Networking</h3>
+              <p class="card-text">Built <a href="#project-iskabon" data-nav="project-iskabon">Iskabon</a> — a DPDK zero-copy packet capture engine hitting 25Gbps line rate.</p>
+              <div class="card-tech">
+                <span class="skill-chip">C</span>
+                <span class="skill-chip">DPDK</span>
+                <span class="skill-chip">BPF</span>
+              </div>
+            </article>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <div class="container" style="padding: 2rem 0; display: flex; justify-content: space-between;">
+      <a href="#home" class="btn" data-nav="home">← Home</a>
+      <a href="#projects" class="btn" data-nav="projects">Projects →</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS PAGE
+       ============================================================ -->
+  <section id="page-projects" class="page-section">
+    <main class="page-content">
+      <div class="container">
+        <div class="breadcrumb">
+          <span class="separator">&gt;</span> <span class="current">classified_ops</span>
+        </div>
+
+        <h1 class="section-title reveal">Classified Operations</h1>
+        <p class="section-subtitle reveal">Six flagship projects — each solving a different problem in offensive and defensive security</p>
+
+        <div class="card-grid">
+          <article class="card card-glitch reveal-flip">
+            <h3 class="card-title">TrinityOS</h3>
+            <p class="card-text">Custom offensive security operating system built on Debian with a curated pentest toolset, reproducible bootable ISO, and hardened kernel configuration for red team operations.</p>
+            <div class="card-tech">
+              <span class="skill-chip">Debian</span>
+              <span class="skill-chip">Bash</span>
+              <span class="skill-chip">Python3</span>
+              <span class="skill-chip">live-build</span>
+              <span class="skill-chip">Xfce</span>
+            </div>
+            <a href="#project-trinityos" class="card-link" data-nav="project-trinityos">Explore TrinityOS — custom offensive security OS</a>
+          </article>
+
+          <article class="card card-glitch reveal-flip">
+            <h3 class="card-title">PINACA</h3>
+            <p class="card-text">Parallel Intrusion Network Analysis & Correlation Architecture — a distributed IDS with real-time correlation across sensor nodes and eBPF-powered packet inspection.</p>
+            <div class="card-tech">
+              <span class="skill-chip">Python3</span>
+              <span class="skill-chip">C</span>
+              <span class="skill-chip">eBPF</span>
+              <span class="skill-chip">Elasticsearch</span>
+              <span class="skill-chip">Kibana</span>
+              <span class="skill-chip">Docker</span>
+            </div>
+            <a href="#project-pinaca" class="card-link" data-nav="project-pinaca">Explore PINACA — distributed intrusion detection</a>
+          </article>
+
+          <article class="card card-glitch reveal-flip">
+            <h3 class="card-title">Meghnad</h3>
+            <p class="card-text">AI-powered vulnerability scanner using ML-assisted exploitability scoring, with automated integration against Shodan and Censys for comprehensive attack surface mapping.</p>
+            <div class="card-tech">
+              <span class="skill-chip">Python3</span>
+              <span class="skill-chip">Scikit-learn</span>
+              <span class="skill-chip">asyncio</span>
+              <span class="skill-chip">Shodan API</span>
+            </div>
+            <a href="#project-meghnad" class="card-link" data-nav="project-meghnad">Explore Meghnad — AI-powered vulnerability scanner</a>
+          </article>
+
+          <article class="card card-glitch reveal-flip">
+            <h3 class="card-title">Kalki</h3>
+            <p class="card-text">Autonomous penetration testing framework that chains recon, exploitation, and privilege escalation into a single pipeline — from zero to domain admin without human intervention.</p>
+            <div class="card-tech">
+              <span class="skill-chip">Python3</span>
+              <span class="skill-chip">Rust</span>
+              <span class="skill-chip">Impacket</span>
+              <span class="skill-chip">Scapy</span>
+              <span class="skill-chip">BloodHound</span>
+            </div>
+            <a href="#project-kalki" class="card-link" data-nav="project-kalki">Explore Kalki — autonomous pentest framework</a>
+          </article>
+
+          <article class="card card-glitch reveal-flip">
+            <h3 class="card-title">Iskabon</h3>
+            <p class="card-text">High-performance packet capture engine built on DPDK zero-copy architecture, achieving wire-speed performance on 10Gbps+ networks without kernel overhead.</p>
+            <div class="card-tech">
+              <span class="skill-chip">C</span>
+              <span class="skill-chip">DPDK</span>
+              <span class="skill-chip">libpcap</span>
+              <span class="skill-chip">BPF</span>
+            </div>
+            <a href="#project-iskabon" class="card-link" data-nav="project-iskabon">Explore Iskabon — high-performance packet capture</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="container project-nav">
+        <a href="#about" data-nav="about">← About</a>
+        <a href="#experience" data-nav="experience">→ Experience</a>
+      </div>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       PROJECT: TRINITYOS
+       ============================================================ -->
+  <section id="page-project-trinityos" class="page-section">
+    <main class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <span style="color:var(--cyan)">root@nilotpal:~/projects</span><span class="separator">#</span> <span class="current">trinityos</span>
+      </nav>
+
+      <article class="project-page">
+        <header class="project-header">
+          <h1 class="glitch" data-text="TrinityOS — Custom Offensive Security Operating System">TrinityOS — Custom Offensive Security Operating System</h1>
+          <p class="project-tagline">A custom-built Debian-based Linux distribution for offensive security professionals.</p>
+          <div class="project-meta">
+            <span class="status-badge status-active">Active Development</span>
+            <span class="tech-label">Debian · Bash · Python · live-build</span>
+          </div>
+        </header>
+
+        <section class="project-overview">
+          <h2>Overview</h2>
+          <p>TrinityOS is a custom-built, Debian-based Linux distribution designed for offensive security professionals and penetration testers. Built from the ground up by Nilotpal Guha, TrinityOS packages a carefully curated toolset for reconnaissance, exploitation, post-exploitation, and reporting into a reproducible bootable ISO.</p>
+          <p>Unlike generic security distributions, TrinityOS is purpose-built with a reproducible build system, ensuring every ISO is identical and verifiable. The distribution emphasizes a terminal-centric workflow with custom Xfce configuration, enabling operators to work efficiently without unnecessary GUI overhead.</p>
+        </section>
+
+        <section class="project-features">
+          <h2>Key Features</h2>
+          <ul class="feature-list">
+            <li>
+              <strong>Debian Stable Base</strong>
+              <p>Built on Debian stable with a custom-hardened kernel configuration, ensuring reliability and security at the OS level.</p>
+            </li>
+            <li>
+              <strong>Pre-installed Pentest Toolset</strong>
+              <p>Includes Metasploit Framework, Burp Suite, Nmap, BloodHound, Impacket, John the Ripper, Hashcat, and 100+ other tools pre-configured and ready to use.</p>
+            </li>
+            <li>
+              <strong>Custom Recon &amp; Exploit Scripts</strong>
+              <p>Bash and Python scripts for automated reconnaissance, service enumeration, and exploit delivery, reducing repetitive manual tasks.</p>
+            </li>
+            <li>
+              <strong>Reproducible Build System</strong>
+              <p>Uses Debian live-build for fully reproducible ISO generation. Every build can be verified against the source repository.</p>
+            </li>
+            <li>
+              <strong>LUKS Full-Disk Encryption</strong>
+              <p>Optional full-disk encryption with LUKS, ensuring sensitive tooling and data remain protected at rest.</p>
+            </li>
+            <li>
+              <strong>Terminal-Centric Xfce Desktop</strong>
+              <p>Custom Xfce desktop environment optimized for terminal-heavy workflows with tiled window management and custom keybindings.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-tech">
+          <h2>Tech Stack</h2>
+          <div class="tech-tags">
+            <span class="tech-tag">Debian</span>
+            <span class="tech-tag">Linux Kernel</span>
+            <span class="tech-tag">Bash</span>
+            <span class="tech-tag">Python3</span>
+            <span class="tech-tag">live-build</span>
+            <span class="tech-tag">Xfce</span>
+            <span class="tech-tag">systemd</span>
+            <span class="tech-tag">squashfs</span>
+          </div>
+        </section>
+
+        <section class="project-architecture">
+          <h2>Architecture</h2>
+          <p>TrinityOS follows a layered architecture built on top of Debian's live-build system. The base layer provides a minimal Debian installation with kernel hardening applied. The tool layer adds pre-configured security tools with persistent configuration support. The automation layer includes custom scripts for common pentest workflows. The desktop layer provides a customized Xfce environment with terminal-centric keybindings and layouts.</p>
+        </section>
+
+        <section class="project-links">
+          <h2>Resources</h2>
+          <div class="link-grid">
+            <a href="https://github.com/Nil2004n/trinityos" class="project-link" target="_blank" rel="noopener">
+              <span class="link-icon">⚡</span>
+              <span class="link-text">View on GitHub</span>
+            </a>
+            <a href="#projects" class="project-link" data-nav="projects">
+              <span class="link-icon">←</span>
+              <span class="link-text">All Projects</span>
+            </a>
+          </div>
+        </section>
+
+        <nav class="project-nav" aria-label="Project navigation">
+          <a href="#projects" data-nav="projects">
+            <span class="nav-arrow">←</span>
+            <span class="nav-label">Back to Projects</span>
+          </a>
+          <a href="#project-pinaca" data-nav="project-pinaca">
+            <span class="nav-label">PINACA</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </nav>
+      </article>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       PROJECT: PINACA
+       ============================================================ -->
+  <section id="page-project-pinaca" class="page-section">
+    <main class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <span style="color:var(--cyan)">root@nilotpal:~/projects</span><span class="separator">#</span> <span class="current">pinaca</span>
+      </nav>
+
+      <article class="project-page">
+        <header class="project-header">
+          <h1 class="glitch" data-text="PINACA — Parallel Intrusion Network Analysis & Correlation Architecture">PINACA — Parallel Intrusion Network Analysis &amp; Correlation Architecture</h1>
+          <p class="project-tagline">Distributed intrusion detection with real-time threat correlation across parallel sensor nodes.</p>
+          <div class="project-meta">
+            <span class="status-badge status-research">Research Prototype</span>
+            <span class="tech-label">Python · C · eBPF · Elasticsearch</span>
+          </div>
+        </header>
+
+        <section class="project-overview">
+          <h2>Overview</h2>
+          <p>PINACA (Parallel Intrusion Network Analysis &amp; Correlation Architecture) is a distributed intrusion detection system designed for real-time network monitoring and threat correlation across multiple sensor nodes. Developed by Nilotpal Guha, PINACA addresses the challenge of correlating alerts across segmented networks without centralized bottlenecks.</p>
+          <p>Traditional IDS deployments struggle with scale — as network segments grow, centralized collectors become bottlenecks and single points of failure. PINACA solves this by distributing the analysis load across sensor nodes while maintaining a correlation engine that can link events across the entire network topology.</p>
+        </section>
+
+        <section class="project-features">
+          <h2>Key Features</h2>
+          <ul class="feature-list">
+            <li>
+              <strong>Distributed Sensor Architecture</strong>
+              <p>Deploy sensors across network segments with a centralized correlation engine that aggregates alerts without introducing latency or single points of failure.</p>
+            </li>
+            <li>
+              <strong>Real-Time Packet Inspection</strong>
+              <p>Uses AF_PACKET and eBPF for high-performance packet capture and analysis at line rate, enabling deep packet inspection without impacting network throughput.</p>
+            </li>
+            <li>
+              <strong>Custom Threat Correlation Rules</strong>
+              <p>Rule engine that correlates events across multiple sensors, detecting multi-stage attacks that span network segments — something single-sensor IDS solutions miss.</p>
+            </li>
+            <li>
+              <strong>Elasticsearch + Kibana Dashboard</strong>
+              <p>Pre-configured ELK stack integration for real-time visualization, alerting, and historical analysis of network threat data.</p>
+            </li>
+            <li>
+              <strong>REST API for SOAR Integration</strong>
+              <p>Full REST API enables integration with Security Orchestration, Automation, and Response (SOAR) platforms for automated incident response workflows.</p>
+            </li>
+            <li>
+              <strong>Python Plugin System</strong>
+              <p>Extensible plugin architecture allows custom detection rules to be written in Python, enabling rapid development of organization-specific threat signatures.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-tech">
+          <h2>Tech Stack</h2>
+          <div class="tech-tags">
+            <span class="tech-tag">Python3</span>
+            <span class="tech-tag">C</span>
+            <span class="tech-tag">eBPF</span>
+            <span class="tech-tag">AF_PACKET</span>
+            <span class="tech-tag">Elasticsearch</span>
+            <span class="tech-tag">Kibana</span>
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+        </section>
+
+        <section class="project-architecture">
+          <h2>Architecture</h2>
+          <p>PINACA operates on a three-tier architecture: sensor nodes perform local packet capture and analysis using eBPF programs for kernel-level performance. An aggregation layer collects and normalizes sensor outputs via Redis message queues. The correlation engine applies cross-sensor rules to detect distributed attack patterns, feeding results into Elasticsearch for storage and Kibana for visualization. The entire stack is containerized with Docker for easy deployment across heterogeneous environments.</p>
+        </section>
+
+        <section class="project-links">
+          <h2>Resources</h2>
+          <div class="link-grid">
+            <a href="https://github.com/Nil2004n/pinaca" class="project-link" target="_blank" rel="noopener">
+              <span class="link-icon">⚡</span>
+              <span class="link-text">View on GitHub</span>
+            </a>
+            <a href="#projects" class="project-link" data-nav="projects">
+              <span class="link-icon">←</span>
+              <span class="link-text">All Projects</span>
+            </a>
+          </div>
+        </section>
+
+        <nav class="project-nav" aria-label="Project navigation">
+          <a href="#project-trinityos" data-nav="project-trinityos">
+            <span class="nav-arrow">←</span>
+            <span class="nav-label">TrinityOS</span>
+          </a>
+          <a href="#project-meghnad" data-nav="project-meghnad">
+            <span class="nav-label">Meghnad</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </nav>
+      </article>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       PROJECT: MEGHNAD
+       ============================================================ -->
+  <section id="page-project-meghnad" class="page-section">
+    <main class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <span style="color:var(--cyan)">root@nilotpal:~/projects</span><span class="separator">#</span> <span class="current">meghnad</span>
+      </nav>
+
+      <article class="project-page">
+        <header class="project-header">
+          <h1 class="glitch" data-text="Meghnad — AI-Powered Vulnerability Scanner">Meghnad — AI-Powered Vulnerability Scanner</h1>
+          <p class="project-tagline">Machine learning-powered vulnerability scanning with intelligent exploitability prioritization.</p>
+          <div class="project-meta">
+            <span class="status-badge status-beta">Beta</span>
+            <span class="tech-label">Python · Scikit-learn · asyncio · Shodan</span>
+          </div>
+        </header>
+
+        <section class="project-overview">
+          <h2>Overview</h2>
+          <p>Meghnad is an intelligent vulnerability scanner that leverages machine learning to prioritize findings by exploitability and reduce false positive noise. Built by Nilotpal Guha, Meghnad goes beyond signature-based scanning by correlating CVE data with real-world exploit availability and network context.</p>
+          <p>Traditional vulnerability scanners overwhelm security teams with hundreds of low-severity findings. Meghnad changes this by applying ML models trained on historical CVE data and exploit databases to score each finding by actual exploitability, helping teams focus on what matters most.</p>
+        </section>
+
+        <section class="project-features">
+          <h2>Key Features</h2>
+          <ul class="feature-list">
+            <li>
+              <strong>ML-Based Exploitability Scoring</strong>
+              <p>Uses CVE data and the Exploit Prediction Scoring System (EPSS) to assign realistic exploitability scores to each finding, prioritizing vulnerabilities that are most likely to be exploited in the wild.</p>
+            </li>
+            <li>
+              <strong>Parallel Scanning Engine</strong>
+              <p>Async I/O-based scanning engine that can evaluate thousands of hosts simultaneously, dramatically reducing scan completion times compared to sequential scanners.</p>
+            </li>
+            <li>
+              <strong>Custom Plugin Architecture</strong>
+              <p>Modular plugin system allows custom scan modules to be written in Python, enabling organization-specific vulnerability checks alongside standard CVE scanning.</p>
+            </li>
+            <li>
+              <strong>Shodan &amp; Censys Integration</strong>
+              <p>Automatically discovers external attack surface by querying Shodan and Censys APIs, mapping discovered services back to internal assets.</p>
+            </li>
+            <li>
+              <strong>Report Generation</strong>
+              <p>Generates detailed reports in HTML and JSON formats with executive summaries, technical findings, and remediation guidance.</p>
+            </li>
+            <li>
+              <strong>CI/CD REST API</strong>
+              <p>Fully documented REST API enables integration into CI/CD pipelines for automated security gate checks in deployment workflows.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-tech">
+          <h2>Tech Stack</h2>
+          <div class="tech-tags">
+            <span class="tech-tag">Python3</span>
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">asyncio</span>
+            <span class="tech-tag">aiohttp</span>
+            <span class="tech-tag">Shodan API</span>
+            <span class="tech-tag">Censys API</span>
+            <span class="tech-tag">Jinja2</span>
+          </div>
+        </section>
+
+        <section class="project-architecture">
+          <h2>Architecture</h2>
+          <p>Meghnad's architecture separates scanning, analysis, and reporting into distinct layers. The scanning layer uses asyncio for concurrent host evaluation. The analysis layer applies ML models to raw findings, correlating them with EPSS scores and exploit database data. The reporting layer uses Jinja2 templates to generate human-readable HTML reports and machine-parsable JSON output. The Shodan/Censys integration runs as an optional surface discovery module that feeds host targets into the scanning pipeline.</p>
+        </section>
+
+        <section class="project-links">
+          <h2>Resources</h2>
+          <div class="link-grid">
+            <a href="https://github.com/Nil2004n/meghnad" class="project-link" target="_blank" rel="noopener">
+              <span class="link-icon">⚡</span>
+              <span class="link-text">View on GitHub</span>
+            </a>
+            <a href="#projects" class="project-link" data-nav="projects">
+              <span class="link-icon">←</span>
+              <span class="link-text">All Projects</span>
+            </a>
+          </div>
+        </section>
+
+        <nav class="project-nav" aria-label="Project navigation">
+          <a href="#project-pinaca" data-nav="project-pinaca">
+            <span class="nav-arrow">←</span>
+            <span class="nav-label">PINACA</span>
+          </a>
+          <a href="#project-kalki" data-nav="project-kalki">
+            <span class="nav-label">Kalki</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </nav>
+      </article>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       PROJECT: KALKI
+       ============================================================ -->
+  <section id="page-project-kalki" class="page-section">
+    <main class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <span style="color:var(--cyan)">root@nilotpal:~/projects</span><span class="separator">#</span> <span class="current">kalki</span>
+      </nav>
+
+      <article class="project-page">
+        <header class="project-header">
+          <h1 class="glitch" data-text="Kalki — Autonomous Penetration Testing Framework">Kalki — Autonomous Penetration Testing Framework</h1>
+          <p class="project-tagline">End-to-end autonomous pentesting from recon to privilege escalation in a single pipeline.</p>
+          <div class="project-meta">
+            <span class="status-badge status-alpha">Alpha</span>
+            <span class="tech-label">Python · Rust · Impacket · BloodHound</span>
+          </div>
+        </header>
+
+        <section class="project-overview">
+          <h2>Overview</h2>
+          <p>Kalki is an autonomous penetration testing framework that chains together reconnaissance, vulnerability discovery, exploitation, and privilege escalation into a single automated pipeline. Built by Nilotpal Guha, Kalki is designed to augment red team operations by automating repetitive attack chains while leaving strategic decisions to the operator.</p>
+          <p>Named after the prophesied final avatar of Vishnu who restores order, Kalki automates the systematic dismantling of network defenses — from initial foothold to domain administrator — while maintaining full operator visibility and control over every stage of the attack.</p>
+        </section>
+
+        <section class="project-features">
+          <h2>Key Features</h2>
+          <ul class="feature-list">
+            <li>
+              <strong>Autonomous Attack Chain Orchestration</strong>
+              <p>Automatically chains reconnaissance, exploitation, and post-exploitation phases, discovering and executing optimal attack paths without manual intervention at each step.</p>
+            </li>
+            <li>
+              <strong>Modular Exploit Plugin System</strong>
+              <p>Extensible plugin architecture for exploits and post-exploitation modules, allowing custom attack capabilities to be added without modifying the core framework.</p>
+            </li>
+            <li>
+              <strong>Active Directory Attack Automation</strong>
+              <p>Native support for Kerberoasting, AS-REP roasting, DCSync, golden ticket attacks, and other AD-specific attack techniques with automatic discovery and execution.</p>
+            </li>
+            <li>
+              <strong>Automatic Credential Harvesting</strong>
+              <p>Extracts and consolidates credentials from compromised hosts, automatically attempting credential reuse across the network for lateral movement.</p>
+            </li>
+            <li>
+              <strong>Real-Time Operator Console</strong>
+              <p>WebSocket-based console provides real-time visibility into attack progress with session management, allowing operators to intervene or redirect attacks as needed.</p>
+            </li>
+            <li>
+              <strong>MITRE ATT&amp;CK Report Generation</strong>
+              <p>Generates comprehensive reports with findings mapped to MITRE ATT&amp;CK techniques, providing actionable intelligence for both red and blue teams.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-tech">
+          <h2>Tech Stack</h2>
+          <div class="tech-tags">
+            <span class="tech-tag">Python3</span>
+            <span class="tech-tag">Impacket</span>
+            <span class="tech-tag">Scapy</span>
+            <span class="tech-tag">BloodHound</span>
+            <span class="tech-tag">Rust</span>
+            <span class="tech-tag">WebSocket</span>
+          </div>
+        </section>
+
+        <section class="project-architecture">
+          <h2>Architecture</h2>
+          <p>Kalki operates as a pipeline orchestrator with four main stages: Recon, Exploit, Post-Exploit, and Report. The Recon stage uses BloodHound and custom LDAP queries to map Active Directory attack paths. The Exploit stage applies vulnerability findings to establish initial access. The Post-Exploit stage harvests credentials and performs lateral movement. The Report stage generates MITRE ATT&amp;CK-mapped documentation. Rust modules handle performance-critical operations like packet crafting and credential parsing, while Python manages the high-level orchestration and operator console.</p>
+        </section>
+
+        <section class="project-links">
+          <h2>Resources</h2>
+          <div class="link-grid">
+            <a href="https://github.com/Nil2004n/kalki" class="project-link" target="_blank" rel="noopener">
+              <span class="link-icon">⚡</span>
+              <span class="link-text">View on GitHub</span>
+            </a>
+            <a href="#projects" class="project-link" data-nav="projects">
+              <span class="link-icon">←</span>
+              <span class="link-text">All Projects</span>
+            </a>
+          </div>
+        </section>
+
+        <nav class="project-nav" aria-label="Project navigation">
+          <a href="#project-meghnad" data-nav="project-meghnad">
+            <span class="nav-arrow">←</span>
+            <span class="nav-label">Meghnad</span>
+          </a>
+          <a href="#project-iskabon" data-nav="project-iskabon">
+            <span class="nav-label">Iskabon</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </nav>
+      </article>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       PROJECT: ISKABON
+       ============================================================ -->
+  <section id="page-project-iskabon" class="page-section">
+    <main class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <span style="color:var(--cyan)">root@nilotpal:~/projects</span><span class="separator">#</span> <span class="current">iskabon</span>
+      </nav>
+
+      <article class="project-page">
+        <header class="project-header">
+          <h1 class="glitch" data-text="Iskabon — High-Performance Packet Capture Engine">Iskabon — High-Performance Packet Capture Engine</h1>
+          <p class="project-tagline">Wire-speed packet capture for 10Gbps+ networks using DPDK and zero-copy architecture.</p>
+          <div class="project-meta">
+            <span class="status-badge status-rc">Release Candidate</span>
+            <span class="tech-label">C · DPDK · libpcap · BPF · Prometheus</span>
+          </div>
+        </header>
+
+        <section class="project-overview">
+          <h2>Overview</h2>
+          <p>Iskabon is a high-performance packet capture and analysis engine designed for 10Gbps+ network environments. Built by Nilotpal Guha, Iskabon uses DPDK (Data Plane Development Kit) and zero-copy architecture to achieve wire-speed packet capture without dropping frames, addressing the limitations of traditional tools like tcpdump in high-throughput scenarios.</p>
+          <p>At 10Gbps, a standard Ethernet frame arrives every 6.72 nanoseconds. Traditional packet capture tools built on libpcap cannot keep up with this rate without dropping packets. Iskabon bypasses the kernel networking stack entirely using DPDK, writing captured packets directly to user-space memory through zero-copy ring buffers.</p>
+        </section>
+
+        <section class="project-features">
+          <h2>Key Features</h2>
+          <ul class="feature-list">
+            <li>
+              <strong>DPDK Zero-Copy Capture</strong>
+              <p>Bypasses the kernel networking stack entirely, capturing packets directly from NIC hardware queues into user-space memory through DPDK's zero-copy mechanism.</p>
+            </li>
+            <li>
+              <strong>Multi-Speed Support</strong>
+              <p>Supports 10Gbps, 25Gbps, and 40Gbps network interfaces with automatic speed detection and optimal buffer configuration for each rate.</p>
+            </li>
+            <li>
+              <strong>Lock-Free Ring Buffer</strong>
+              <p>Custom SPSC (Single Producer, Single Consumer) ring buffer implementation that eliminates lock contention between the capture thread and analysis threads.</p>
+            </li>
+            <li>
+              <strong>PCAP &amp; PCAP-NG Output</strong>
+              <p>Captured packets are written in standard PCAP and PCAP-NG formats, ensuring compatibility with Wireshark, tcpdump, and other analysis tools.</p>
+            </li>
+            <li>
+              <strong>BPF Packet Filtering</strong>
+              <p>Real-time packet filtering using standard BPF (Berkeley Packet Filter) expressions, allowing operators to capture only relevant traffic at line rate.</p>
+            </li>
+            <li>
+              <strong>Prometheus Metrics</strong>
+              <p>Built-in Prometheus metrics endpoint exposes capture statistics including packet rates, drop counts, buffer utilization, and CPU usage for monitoring integration.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-tech">
+          <h2>Tech Stack</h2>
+          <div class="tech-tags">
+            <span class="tech-tag">C</span>
+            <span class="tech-tag">DPDK</span>
+            <span class="tech-tag">libpcap</span>
+            <span class="tech-tag">BPF</span>
+            <span class="tech-tag">Prometheus client</span>
+            <span class="tech-tag">Makefile</span>
+          </div>
+        </section>
+
+        <section class="project-architecture">
+          <h2>Architecture</h2>
+          <p>Iskabon's architecture is built around DPDK's poll-mode driver model. A dedicated capture thread polls NIC hardware queues directly, bypassing the kernel entirely. Captured mbufs (memory buffers) are placed into a custom lock-free SPSC ring buffer. Analysis threads consume from this ring, applying BPF filters and writing to PCAP output files. The Prometheus metrics thread periodically samples capture statistics and exposes them on an HTTP endpoint. This architecture ensures zero packet loss at line rate while maintaining minimal CPU overhead through busy-polling.</p>
+        </section>
+
+        <section class="project-links">
+          <h2>Resources</h2>
+          <div class="link-grid">
+            <a href="https://github.com/Nil2004n/iskabon" class="project-link" target="_blank" rel="noopener">
+              <span class="link-icon">⚡</span>
+              <span class="link-text">View on GitHub</span>
+            </a>
+            <a href="#projects" class="project-link" data-nav="projects">
+              <span class="link-icon">←</span>
+              <span class="link-text">All Projects</span>
+            </a>
+          </div>
+        </section>
+
+        <nav class="project-nav" aria-label="Project navigation">
+          <a href="#project-kalki" data-nav="project-kalki">
+            <span class="nav-arrow">←</span>
+            <span class="nav-label">Kalki</span>
+          </a>
+          <a href="#projects" data-nav="projects">
+            <span class="nav-label">All Projects</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </nav>
+      </article>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       EXPERIENCE PAGE
+       ============================================================ -->
+  <section id="page-experience" class="page-section">
+    <main class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <span style="color:var(--cyan)">root@nilotpal:~/experience</span><span class="separator">#</span>
+      </nav>
+
+      <header class="page-header">
+        <h1 class="glitch" data-text="Professional Experience Log">Professional Experience Log</h1>
+        <p class="page-subtitle">A chronological record of roles, responsibilities, and operational contributions.</p>
+      </header>
+
+      <div class="timeline">
+        <article class="timeline-entry reveal">
+          <div class="timeline-date">
+            <time datetime="2024-09">Sept 2024</time> – <time datetime="2025-05">May 2025</time>
+          </div>
+          <div class="timeline-title">Edge Cloud Infrastructure Engineer</div>
+          <div class="timeline-org">Oratech.labs</div>
+          <div class="timeline-desc">
+            <ul>
+              <li>Designed and deployed edge cloud infrastructure across distributed nodes, optimizing for low-latency workloads</li>
+              <li>Automated provisioning and configuration of cloud resources using Infrastructure as Code (IaC) pipelines</li>
+              <li>Managed Kubernetes clusters and container orchestration for edge-deployed microservices</li>
+              <li>Implemented monitoring and observability stacks (Prometheus, Grafana) for edge node health tracking</li>
+              <li>Collaborated with security teams to harden edge infrastructure against attack surfaces</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-entry reveal">
+          <div class="timeline-date">
+            <time datetime="2024-08">Aug 2024</time> – <time datetime="2025-11">Nov 2025</time>
+          </div>
+          <div class="timeline-title">Community Member</div>
+          <div class="timeline-org">Ignitex Club, RCCIIT</div>
+          <div class="timeline-desc">
+            <ul>
+              <li>Participated in technical workshops and CTF competitions focused on cybersecurity</li>
+              <li>Contributed to club infrastructure and event logistics</li>
+              <li>Engaged in peer mentoring and skill-sharing sessions</li>
+              <li>Attended guest lectures on ethical hacking, network security, and cryptography</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-entry reveal">
+          <div class="timeline-date">
+            <time datetime="2025-11">Nov 2025</time> – <time datetime="2026-12">Present</time>
+          </div>
+          <div class="timeline-title">Cybersecurity Associate</div>
+          <div class="timeline-org">Ignitex Club, RCCIIT</div>
+          <div class="timeline-desc">
+            <ul>
+              <li>Leading security-focused initiatives and penetration testing workshops</li>
+              <li>Conducting vulnerability assessments on club infrastructure and event platforms</li>
+              <li>Developing security training curricula for junior members</li>
+              <li>Coordinating with industry professionals for advanced security skill development sessions</li>
+              <li>Managing club servers, networks, and hardening security configurations</li>
+            </ul>
+          </div>
         </article>
       </div>
-      <p style="text-align: center; margin-top: 2rem;"><a href="projects.html" class="btn">View All Projects →</a></p>
-    </section>
-  </main>
 
+      <nav class="project-nav" aria-label="Page navigation">
+        <a href="#projects" data-nav="projects">
+          <span class="nav-arrow">←</span>
+          <span class="nav-label">Projects</span>
+        </a>
+        <a href="#certifications" data-nav="certifications">
+          <span class="nav-label">Certifications</span>
+          <span class="nav-arrow">→</span>
+        </a>
+      </nav>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       CERTIFICATIONS PAGE
+       ============================================================ -->
+  <section id="page-certifications" class="page-section">
+    <main>
+      <section class="container" style="padding-top: calc(var(--nav-height) + 2rem);">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <span style="color:var(--cyan)">root@nilotpal:~/certifications</span><span class="separator">#</span>
+        </nav>
+
+        <h2 class="section-title">Certifications &amp; Credentials</h2>
+        <p class="section-subtitle">Verified professional credentials and offensive security certifications</p>
+
+        <div class="badge-grid">
+          <article class="badge">
+            <div class="badge-icon">🛡️</div>
+            <h3 class="badge-name">CSCSO – Certified SME Cybersecurity Officer</h3>
+            <p class="badge-issuer">International Cyber Threat Task Force (ICTTF) | EU Cyber Academy</p>
+            <time class="badge-date" datetime="2026">2026</time>
+          </article>
+
+          <article class="badge">
+            <div class="badge-icon">🔒</div>
+            <h3 class="badge-name">CRPO – Certified Ransomware Protection Officer</h3>
+            <p class="badge-issuer">International Cyber Threat Task Force (ICTTF) | EU Cyber Academy</p>
+            <time class="badge-date" datetime="2026">2026</time>
+          </article>
+
+          <article class="badge">
+            <div class="badge-icon">🔵</div>
+            <h3 class="badge-name">Blue Team Junior Analyst</h3>
+            <p class="badge-issuer">Centri</p>
+            <time class="badge-date" datetime="2026">2026</time>
+          </article>
+
+          <article class="badge">
+            <div class="badge-icon">🌐</div>
+            <h3 class="badge-name">Cisco Ethical Hacker</h3>
+            <p class="badge-issuer">Cisco Networking Academy</p>
+            <time class="badge-date" datetime="2025">2025</time>
+          </article>
+
+          <article class="badge">
+            <div class="badge-icon">🔐</div>
+            <h3 class="badge-name">Junior Cybersecurity Analyst</h3>
+            <p class="badge-issuer">Cisco Networking Academy</p>
+            <time class="badge-date" datetime="2025">2025</time>
+          </article>
+
+          <article class="badge">
+            <div class="badge-icon">🐧</div>
+            <h3 class="badge-name">LFEL1010: XSS Exploits and Defenses</h3>
+            <p class="badge-issuer">Linux Foundation</p>
+            <time class="badge-date" datetime="2025">2025</time>
+          </article>
+
+          <article class="badge">
+            <div class="badge-icon">🇪🇺</div>
+            <h3 class="badge-name">LFEL1001: EU Cyber Resilience Act</h3>
+            <p class="badge-issuer">Linux Foundation</p>
+            <time class="badge-date" datetime="2025">2025</time>
+          </article>
+
+          <article class="badge">
+            <div class="badge-icon">☁️</div>
+            <h3 class="badge-name">Monitoring in Google Cloud</h3>
+            <p class="badge-issuer">Google Cloud Skill Boost</p>
+            <time class="badge-date" datetime="2025">2025</time>
+          </article>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 3rem;">
+          <a href="#experience" class="btn" data-nav="experience">← Experience</a>
+          <a href="#research" class="btn" data-nav="research">→ Research</a>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       RESEARCH PAGE
+       ============================================================ -->
+  <section id="page-research" class="page-section">
+    <main class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <span style="color:var(--cyan)">root@nilotpal:~/research</span><span class="separator">#</span>
+      </nav>
+
+      <header class="section-header">
+        <h1 class="glitch" data-text="Research & Projects">Research &amp; Projects</h1>
+        <p class="section-subtitle">Technical builds spanning offensive security, IoT appliances, steganography, and systems programming</p>
+      </header>
+
+      <section class="pub-list">
+        <article class="pub-entry reveal">
+          <h3>Trinity OS — Custom Offensive Security Operating System</h3>
+          <p class="pub-authors">Nilotpal Guha</p>
+          <p class="pub-venue">Debian Linux, Docker, Bash, QEMU</p>
+          <span class="pub-status submitted">Active</span>
+          <p>A custom Debian-based Linux distribution engineered for offensive security operations, packaged as a fully reproducible bootable ISO via a Docker build factory. Ships pre-configured with a curated offensive toolset (Nmap, Metasploit, custom recon pipelines), a bespoke tmux workspace layout, and a custom ASCII boot identity. Boots to a fully operational pentest environment in under 90 seconds; ISO rebuilds reproducibly in under 6 minutes on any Docker-capable machine.</p>
+        </article>
+
+        <article class="pub-entry reveal">
+          <h3>PINACA — Portable Intelligent Network Attack Countermeasure and Analysis System</h3>
+          <p class="pub-authors">Nilotpal Guha</p>
+          <p class="pub-venue">C++, Python, Shell scripting, SQLite, Raspberry Pi, Ollama, Cloudflare</p>
+          <span class="pub-status submitted">Active</span>
+          <p>An AI-enabled portable IoT edge security appliance delivering real-time cyber-attack detection and automated mitigation with no cloud dependency. Runs local LLM inference via Ollama on-device for threat classification, maintains a persistent SQLite event log, and exposes a Cloudflare-secured remote interface — purpose-built for deployment in air-gapped and low-infrastructure environments where enterprise solutions are inaccessible.</p>
+        </article>
+
+        <article class="pub-entry reveal">
+          <h3>Meghnad — Blockchain-Secured Steganographic Communication System</h3>
+          <p class="pub-authors">Nilotpal Guha</p>
+          <p class="pub-venue">C++, Python, Shell scripting, SQLite, Raspberry Pi, Ethereum testnet, Cloudflare</p>
+          <span class="pub-status submitted">Active</span>
+          <p>A covert communication platform engineered for adversarial environments where conventional encrypted channels are insufficient. Combines Ethereum-blockchain-enforced message integrity with a custom steganographic network protocol that embeds encrypted payloads inside standard traffic — making payload delivery difficult to detect with standard deep packet inspection.</p>
+        </article>
+
+        <article class="pub-entry reveal">
+          <h3>Kalki — Agentic Pentesting Automation Framework</h3>
+          <p class="pub-authors">Nilotpal Guha</p>
+          <p class="pub-venue">C++, Python, Bash, KVM, network security tooling, agentic AI orchestration</p>
+          <span class="pub-status submitted">Active</span>
+          <p>A unified offensive security platform that autonomously orchestrates the full pentest lifecycle — from reconnaissance and vulnerability enumeration to intelligent attack chaining and exploit development. An agentic AI engine adapts strategy dynamically based on the discovered attack surface; KVM-isolated execution environments provide safe, contained payload testing and reduce manual recon-to-exploit workflows from hours to minutes.</p>
+        </article>
+
+        <article class="pub-entry reveal">
+          <h3>Iskabon — High-Performance Packet Capture & Protocol Analysis Engine</h3>
+          <p class="pub-authors">Nilotpal Guha</p>
+          <p class="pub-venue">C++, raw socket programming, network protocol analysis, systems programming</p>
+          <span class="pub-status submitted">Active</span>
+          <p>A from-scratch network packet capture engine targeting performance parity with tshark, with zero third-party dependencies and full Wireshark protocol compatibility. Engineered for minimal coupling, high throughput, and extensibility — designed to be a definitive CLI-native packet analysis tool for resource-constrained and high-performance environments alike.</p>
+        </article>
+      </section>
+
+      <nav class="project-nav" aria-label="Page navigation">
+        <a href="#certifications" data-nav="certifications">
+          <span class="nav-arrow">&larr;</span>
+          <span class="nav-label">Certifications</span>
+        </a>
+        <a href="#contact" data-nav="contact">
+          <span class="nav-label">Contact</span>
+          <span class="nav-arrow">&rarr;</span>
+        </a>
+      </nav>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       CONTACT PAGE
+       ============================================================ -->
+  <section id="page-contact" class="page-section">
+    <main class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <span style="color:var(--cyan)">root@nilotpal:~/contact</span><span class="separator">#</span>
+      </nav>
+
+      <header class="page-header">
+        <h1 class="glitch" data-text="Establish Secure Channel">Establish Secure Channel</h1>
+        <p class="page-subtitle">Select a channel below to initiate encrypted communication.</p>
+      </header>
+
+      <section class="contact-terminal reveal">
+        <div class="terminal">
+          <div class="terminal-header">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">contact.sh — secure channel directory</span>
+          </div>
+          <div class="line"><span class="prompt">$</span> <span class="output">cat /etc/secure_channels.conf</span></div>
+          <div class="line">
+            <span class="line-label">Email:</span>
+            <span class="line-value"><a href="mailto:guha.nilotpal04@gmail.com">guha.nilotpal04@gmail.com</a></span>
+          </div>
+          <div class="line">
+            <span class="line-label">LinkedIn:</span>
+            <span class="line-value"><a href="https://linkedin.com/in/nilotpal-guha-2876b72b7" target="_blank" rel="noopener">linkedin.com/in/nilotpal-guha-2876b72b7</a></span>
+          </div>
+          <div class="line">
+            <span class="line-label">GitHub:</span>
+            <span class="line-value"><a href="https://github.com/Nil2004n" target="_blank" rel="noopener">github.com/Nil2004n</a></span>
+          </div>
+          <div class="line">
+            <span class="line-label">Phone:</span>
+            <span class="line-value"><a href="tel:+918336894893">+91-8336894893</a></span>
+          </div>
+          <div class="line">
+            <span class="line-label">Location:</span>
+            <span class="line-value">Kolkata, West Bengal, India</span>
+          </div>
+          <div class="line"><span class="prompt">$</span> <span class="output">echo "All channels verified and operational."</span></div>
+          <div class="line"><span class="prompt">$</span> <span class="cursor"></span></div>
+        </div>
+      </section>
+
+      <section class="send-message reveal">
+        <h2>Send a Message</h2>
+        <div class="terminal">
+          <div class="terminal-header">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">transmission.sh</span>
+          </div>
+          <div class="line"><span class="prompt">$</span> <span class="output">./transmission.sh --init</span></div>
+          <div class="line"><span class="output">Ready to receive transmission...</span></div>
+          <div class="line"><span class="output">Use any channel above to send your message.</span></div>
+          <div class="line"><span class="prompt">$</span> <span class="cursor"></span></div>
+        </div>
+      </section>
+
+      <nav class="project-nav" aria-label="Page navigation">
+        <a href="#research" data-nav="research">
+          <span class="nav-arrow">←</span>
+          <span class="nav-label">Research</span>
+        </a>
+        <a href="#home" data-nav="home">
+          <span class="nav-label">Home</span>
+          <span class="nav-arrow">→</span>
+        </a>
+      </nav>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       404 PAGE
+       ============================================================ -->
+  <section id="page-404" class="page-section">
+    <main class="error-page">
+      <div class="container">
+        <div class="error-code glitch" data-text="404">404</div>
+        <h1 style="color: var(--red); margin: 1rem 0; font-size: 1.5rem;">connection_lost.sh</h1>
+        <p style="color: var(--text); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+          The resource you're looking for doesn't exist, has been moved, or the connection was severed mid-transmission.
+        </p>
+        <div class="terminal" style="max-width: 500px; margin: 0 auto 2rem;">
+          <div class="terminal-header">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+          </div>
+          <div class="line"><span class="prompt">$</span> <span class="error">cat /var/log/connection_lost.sh</span></div>
+          <div class="line"><span class="error">ERROR: Route not found in routing table</span></div>
+          <div class="line"><span class="output">Suggestion: Check the URL or return to base.</span></div>
+          <div class="line"><span class="prompt">$</span> <span class="cursor"></span></div>
+        </div>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#home" class="btn" data-nav="home">Return to Base</a>
+          <a href="#projects" class="btn btn-red" data-nav="projects">View Projects</a>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- ============================================================
+       SHARED FOOTER
+       ============================================================ -->
   <div class="fsociety-deco" aria-hidden="true">
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="50" cy="35" r="20" stroke="#00ff41" stroke-width="2" fill="none"/>
@@ -213,23 +2779,23 @@
         <div class="footer-section">
           <h3>Site Map</h3>
           <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="certifications.html">Certifications</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#home" data-nav="home">Home</a></li>
+            <li><a href="#about" data-nav="about">About</a></li>
+            <li><a href="#projects" data-nav="projects">Projects</a></li>
+            <li><a href="#experience" data-nav="experience">Experience</a></li>
+            <li><a href="#certifications" data-nav="certifications">Certifications</a></li>
+            <li><a href="#research" data-nav="research">Research</a></li>
+            <li><a href="#contact" data-nav="contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Projects</h3>
           <ul class="footer-links">
-            <li><a href="projects/trinityos.html">TrinityOS</a></li>
-            <li><a href="projects/pinaca.html">PINACA</a></li>
-            <li><a href="projects/meghnad.html">Meghnad</a></li>
-            <li><a href="projects/kalki.html">Kalki</a></li>
-            <li><a href="projects/iskabon.html">Iskabon</a></li>
+            <li><a href="#project-trinityos" data-nav="project-trinityos">TrinityOS</a></li>
+            <li><a href="#project-pinaca" data-nav="project-pinaca">PINACA</a></li>
+            <li><a href="#project-meghnad" data-nav="project-meghnad">Meghnad</a></li>
+            <li><a href="#project-kalki" data-nav="project-kalki">Kalki</a></li>
+            <li><a href="#project-iskabon" data-nav="project-iskabon">Iskabon</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -247,6 +2813,370 @@
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+<script>
+/* ============================================================
+   NILOTPAL GUHA — MONOLITHIC SPA JAVASCRIPT
+   ============================================================ */
+
+(function () {
+  'use strict';
+
+  /* ---- Page Visibility API — pause animations when hidden ---- */
+  var animationsPaused = false;
+  document.addEventListener('visibilitychange', function () {
+    animationsPaused = document.hidden;
+  });
+
+  /* ---- SPA Router ---- */
+  var currentPage = 'home';
+  var pageMap = {
+    'home': 'page-home',
+    'about': 'page-about',
+    'projects': 'page-projects',
+    'project-trinityos': 'page-project-trinityos',
+    'project-pinaca': 'page-project-pinaca',
+    'project-meghnad': 'page-project-meghnad',
+    'project-kalki': 'page-project-kalki',
+    'project-iskabon': 'page-project-iskabon',
+    'experience': 'page-experience',
+    'certifications': 'page-certifications',
+    'research': 'page-research',
+    'contact': 'page-contact',
+    '404': 'page-404'
+  };
+
+  function navigateTo(page) {
+    if (!pageMap[page]) page = '404';
+
+    // Hide all sections
+    var sections = document.querySelectorAll('.page-section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].classList.remove('active');
+    }
+
+    // Show target section
+    var target = document.getElementById(pageMap[page]);
+    if (target) {
+      target.classList.add('active');
+    }
+
+    // Update nav active state
+    var navLinks = document.querySelectorAll('.nav-links a');
+    for (var j = 0; j < navLinks.length; j++) {
+      navLinks[j].classList.remove('active');
+    }
+
+    // Determine which nav item to highlight
+    var navKey = page;
+    if (page.indexOf('project-') === 0) navKey = 'projects';
+
+    var activeLink = document.querySelector('.nav-links a[data-nav="' + navKey + '"]');
+    if (activeLink) activeLink.classList.add('active');
+
+    currentPage = page;
+
+    // Close mobile nav
+    var hamburger = document.querySelector('.nav-hamburger');
+    var navLinksEl = document.querySelector('.nav-links');
+    if (hamburger) hamburger.classList.remove('open');
+    if (navLinksEl) navLinksEl.classList.remove('open');
+
+    // Scroll to top
+    window.scrollTo(0, 0);
+
+    // Re-init reveals for new page
+    setTimeout(initScrollReveal, 100);
+  }
+
+  function handleHashChange() {
+    var hash = window.location.hash.replace('#', '') || 'home';
+    navigateTo(hash);
+  }
+
+  // Bind all SPA links
+  function initSPA() {
+    var spaLinks = document.querySelectorAll('[data-nav]');
+    for (var i = 0; i < spaLinks.length; i++) {
+      spaLinks[i].addEventListener('click', function (e) {
+        e.preventDefault();
+        var nav = this.getAttribute('data-nav');
+        window.location.hash = nav;
+      });
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Handle initial load
+    if (window.location.hash) {
+      handleHashChange();
+    }
+  }
+
+  /* ---- Boot Sequence ---- */
+  function initBoot() {
+    var overlay = document.querySelector('.boot-overlay');
+    if (!overlay) return;
+    var lines = overlay.querySelectorAll('.boot-line');
+    lines.forEach(function (line, i) {
+      setTimeout(function () {
+        line.classList.add('visible');
+      }, i * 180);
+    });
+    setTimeout(function () {
+      overlay.classList.add('fade-out');
+      setTimeout(function () { overlay.style.display = 'none'; }, 600);
+    }, lines.length * 180 + 600);
+  }
+
+  /* ---- Mobile Nav Toggle ---- */
+  function initNav() {
+    var hamburger = document.querySelector('.nav-hamburger');
+    var navLinks = document.querySelector('.nav-links');
+    if (!hamburger || !navLinks) return;
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+  }
+
+  /* ---- Scroll Reveal (IntersectionObserver) ---- */
+  function initScrollReveal() {
+    var elements = document.querySelectorAll('.reveal, .reveal-flip');
+    if (!elements.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    elements.forEach(function (el) { observer.observe(el); });
+  }
+
+  /* ---- Card 3D Tilt Toward Cursor ---- */
+  function initCardTilt() {
+    var cards = document.querySelectorAll('.card, .badge');
+    cards.forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        if (animationsPaused) return;
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var centerX = rect.width / 2;
+        var centerY = rect.height / 2;
+        var rotateX = ((y - centerY) / centerY) * -5;
+        var rotateY = ((x - centerX) / centerX) * 5;
+        card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-5px)';
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  /* ---- Decrypt / Scramble Text Effect ---- */
+  function initDecryptText() {
+    var elements = document.querySelectorAll('.decrypt-text');
+    if (!elements.length) return;
+    var chars = '!@#$%^&*()_+-=[]{}|;:,.<>?/~`01';
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          decryptElement(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    elements.forEach(function (el) { observer.observe(el); });
+
+    function decryptElement(el) {
+      var scrambleEl = el.querySelector('.scramble-text');
+      var realText = el.querySelector('.real-text');
+      if (!scrambleEl || !realText) return;
+      var target = realText.textContent;
+      var iterations = 0;
+      var interval = setInterval(function () {
+        if (animationsPaused) return;
+        scrambleEl.textContent = target.split('').map(function (char, i) {
+          if (i < iterations) return target[i];
+          if (char === ' ') return ' ';
+          return chars[Math.floor(Math.random() * chars.length)];
+        }).join('');
+        iterations += 1;
+        if (iterations > target.length) {
+          clearInterval(interval);
+          el.classList.add('decrypted');
+        }
+      }, 30);
+    }
+  }
+
+  /* ---- Matrix Rain (Canvas) ---- */
+  function initMatrixRain(canvasId) {
+    var canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W, H, columns, drops;
+    var fontSize = 14;
+    var chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF';
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+      columns = Math.floor(W / fontSize);
+      drops = [];
+      for (var i = 0; i < columns; i++) { drops[i] = Math.random() * -100; }
+    }
+
+    function draw() {
+      if (animationsPaused) { requestAnimationFrame(draw); return; }
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = '#00ff41';
+      ctx.font = fontSize + 'px monospace';
+      for (var i = 0; i < columns; i++) {
+        var text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > H && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    draw();
+  }
+
+  /* ---- Three.js Hero (lazy load) ---- */
+  function initHero3D() {
+    var canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+
+    function loadThree() {
+      var script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+      script.defer = true;
+      script.onload = function () {
+        if (typeof THREE === 'undefined') return;
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+        renderer.setSize(400, 400);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        var geometry = new THREE.IcosahedronGeometry(1.5, 1);
+        var material = new THREE.MeshBasicMaterial({ color: 0x00ff41, wireframe: true, transparent: true, opacity: 0.6 });
+        var ico = new THREE.Mesh(geometry, material);
+        scene.add(ico);
+
+        var innerGeometry = new THREE.IcosahedronGeometry(1.0, 0);
+        var innerMaterial = new THREE.MeshBasicMaterial({ color: 0x0d7377, wireframe: true, transparent: true, opacity: 0.3 });
+        var inner = new THREE.Mesh(innerGeometry, innerMaterial);
+        scene.add(inner);
+
+        camera.position.z = 4;
+
+        var mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', function (e) {
+          mouseX = (e.clientX / window.innerWidth - 0.5) * 0.3;
+          mouseY = (e.clientY / window.innerHeight - 0.5) * 0.3;
+        });
+
+        function animate() {
+          if (animationsPaused) { requestAnimationFrame(animate); return; }
+          requestAnimationFrame(animate);
+          ico.rotation.x += 0.003;
+          ico.rotation.y += 0.005;
+          inner.rotation.x -= 0.005;
+          inner.rotation.y -= 0.003;
+          ico.rotation.x += mouseY;
+          ico.rotation.y += mouseX;
+          inner.rotation.x -= mouseY * 0.5;
+          inner.rotation.y -= mouseX * 0.5;
+          renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', function () {
+          var size = Math.min(400, window.innerWidth * 0.8);
+          renderer.setSize(size, size);
+        });
+      };
+      document.head.appendChild(script);
+    }
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadThree);
+    } else {
+      setTimeout(loadThree, 200);
+    }
+  }
+
+  /* ---- Typing Effect for Contact ---- */
+  function initTypingEffect() {
+    var el = document.querySelector('.typing-effect');
+    if (!el) return;
+    var text = el.getAttribute('data-text');
+    el.textContent = '';
+    var i = 0;
+    function type() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 50 + Math.random() * 50);
+      }
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        type();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+    observer.observe(el);
+  }
+
+  /* ---- Footer Year ---- */
+  function setFooterYear() {
+    var el = document.getElementById('current-year');
+    if (el) el.textContent = new Date().getFullYear();
+  }
+
+  /* ---- INIT ---- */
+  document.addEventListener('DOMContentLoaded', function () {
+    initBoot();
+    initNav();
+    initSPA();
+    initScrollReveal();
+    initCardTilt();
+    initDecryptText();
+    initTypingEffect();
+    setFooterYear();
+
+    // Lazy-load matrix rain after first paint
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(function () {
+        var fullCanvas = document.getElementById('matrix-full');
+        if (fullCanvas) initMatrixRain('matrix-full');
+      });
+    } else {
+      setTimeout(function () {
+        var fullCanvas = document.getElementById('matrix-full');
+        if (fullCanvas) initMatrixRain('matrix-full');
+      }, 300);
+    }
+
+    // Lazy-load hero 3D after paint
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(initHero3D);
+    } else {
+      setTimeout(initHero3D, 500);
+    }
+  });
+})();
+</script>
 </body>
 </html>
