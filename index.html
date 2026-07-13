@@ -848,18 +848,14 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   text-align: center;
   transition: all var(--transition-med);
   transform-style: preserve-3d;
+  display: block;
+  text-decoration: none;
 }
 
 .badge:hover {
   border-color: var(--green);
   transform: translateY(-3px) rotateX(3deg);
   box-shadow: 0 8px 30px rgba(0, 255, 65, 0.06);
-}
-
-.badge-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: block;
 }
 
 .badge-name {
@@ -877,6 +873,24 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   color: var(--cyan);
   font-size: 0.75rem;
   margin-top: 0.5rem;
+  display: block;
+}
+
+.badge-verify {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+  border-radius: var(--border-radius);
+  padding: 0.3rem 0.7rem;
+  transition: all var(--transition-fast);
+}
+
+.badge:hover .badge-verify {
+  background: var(--green);
+  color: var(--black);
+  text-shadow: none;
 }
 
 /* ============================================================
@@ -2520,61 +2534,61 @@ noscript .noscript-content {
         <p class="section-subtitle">Verified professional credentials and offensive security certifications</p>
 
         <div class="badge-grid">
-          <article class="badge">
-            <div class="badge-icon">🛡️</div>
+          <a href="https://mycourse.app/LyV0cL352CtcjeJ6Z" target="_blank" rel="noopener" class="badge">
             <h3 class="badge-name">CSCSO – Certified SME Cybersecurity Officer</h3>
             <p class="badge-issuer">International Cyber Threat Task Force (ICTTF) | EU Cyber Academy</p>
             <time class="badge-date" datetime="2026">2026</time>
-          </article>
+            <span class="badge-verify">Verify Credential →</span>
+          </a>
 
-          <article class="badge">
-            <div class="badge-icon">🔒</div>
+          <a href="https://mycourse.app/dcpt5g7L3Ex3c2I7B" target="_blank" rel="noopener" class="badge">
             <h3 class="badge-name">CRPO – Certified Ransomware Protection Officer</h3>
             <p class="badge-issuer">International Cyber Threat Task Force (ICTTF) | EU Cyber Academy</p>
             <time class="badge-date" datetime="2026">2026</time>
-          </article>
+            <span class="badge-verify">Verify Credential →</span>
+          </a>
 
-          <article class="badge">
-            <div class="badge-icon">🔵</div>
+          <a href="https://elearning.centri.org/home/certificate/959246519" target="_blank" rel="noopener" class="badge">
             <h3 class="badge-name">Blue Team Junior Analyst</h3>
             <p class="badge-issuer">Centri</p>
             <time class="badge-date" datetime="2026">2026</time>
-          </article>
+            <span class="badge-verify">Verify Credential →</span>
+          </a>
 
-          <article class="badge">
-            <div class="badge-icon">🌐</div>
+          <a href="https://www.credly.com/badges/4a880ff8-9899-4649-a255-53cb9f13f07e/public_url" target="_blank" rel="noopener" class="badge">
             <h3 class="badge-name">Cisco Ethical Hacker</h3>
             <p class="badge-issuer">Cisco Networking Academy</p>
             <time class="badge-date" datetime="2025">2025</time>
-          </article>
+            <span class="badge-verify">Verify Credential →</span>
+          </a>
 
-          <article class="badge">
-            <div class="badge-icon">🔐</div>
+          <a href="https://www.credly.com/badges/296eeaad-2970-4911-ae7b-035c2764b7e8/public_url" target="_blank" rel="noopener" class="badge">
             <h3 class="badge-name">Junior Cybersecurity Analyst</h3>
             <p class="badge-issuer">Cisco Networking Academy</p>
             <time class="badge-date" datetime="2025">2025</time>
-          </article>
+            <span class="badge-verify">Verify Credential →</span>
+          </a>
 
-          <article class="badge">
-            <div class="badge-icon">🐧</div>
+          <a href="https://www.credly.com/badges/25079d7e-b474-473d-aba1-f966ad82c2da/public_url" target="_blank" rel="noopener" class="badge">
             <h3 class="badge-name">LFEL1010: XSS Exploits and Defenses</h3>
             <p class="badge-issuer">Linux Foundation</p>
             <time class="badge-date" datetime="2025">2025</time>
-          </article>
+            <span class="badge-verify">Verify Credential →</span>
+          </a>
 
-          <article class="badge">
-            <div class="badge-icon">🇪🇺</div>
+          <a href="https://www.credly.com/badges/4abfbb7a-1d8b-444d-a831-bf0cb8b5c79f/public_url" target="_blank" rel="noopener" class="badge">
             <h3 class="badge-name">LFEL1001: EU Cyber Resilience Act</h3>
             <p class="badge-issuer">Linux Foundation</p>
             <time class="badge-date" datetime="2025">2025</time>
-          </article>
+            <span class="badge-verify">Verify Credential →</span>
+          </a>
 
-          <article class="badge">
-            <div class="badge-icon">☁️</div>
+          <a href="https://www.skills.google/public_profiles/9c7ed52f-7f1a-4c2f-ab85-15107ef43532/badges/12010280?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share" target="_blank" rel="noopener" class="badge">
             <h3 class="badge-name">Monitoring in Google Cloud</h3>
             <p class="badge-issuer">Google Cloud Skill Boost</p>
             <time class="badge-date" datetime="2025">2025</time>
-          </article>
+            <span class="badge-verify">Verify Credential →</span>
+          </a>
         </div>
 
         <div style="display: flex; justify-content: space-between; margin-top: 3rem;">
